@@ -1,23 +1,18 @@
 function commonEnd(a, b) {
+
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
   }
+
   let lastElementA = a.length - 1;
   let lastElementB = b.length - 1;
-  if ( a[0] === b[0] || a[lastElementA] === b[lastElementB]){
+
+  if (a[0] === b[0] || a[lastElementA] === b[lastElementB]){
     return true;
   } else {
     return false;
   }
 }
-
-  else if (!a || a.){
-    return true;
-  }
-
-  // write your code here
-}
-
 function endsMeet(values, n) {
   // write your code here
 }
