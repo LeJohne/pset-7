@@ -13,8 +13,12 @@ function commonEnd(a, b) {
     return false;
   }
 }
+
 function endsMeet(values, n) {
-  // write your code here
+  if (!value || value.length < n || n < 0){
+    return = []
+  }
+
 }
 
 function difference(numbers) {
