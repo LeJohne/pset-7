@@ -39,7 +39,7 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  if (!numbers || numbers.some(isNaN) || numbers.length < 1 ){
+  if (!numbers || numbers.some(isNaN) || numbers.length < 1){
     return undefined;
   } else {
     let maximum = Number(Math.max.apply(null, numbers));
