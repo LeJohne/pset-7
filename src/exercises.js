@@ -75,7 +75,7 @@ function middle(values) {
   } else {
     let newA = [];
 
-    let middle = Math.floor(value.length / 2);
+    let middle = Math.floor(values.length / 2);
     newA.push(values[middle - 1], values[middle], values[middle + 1]);
 
     return newA;
