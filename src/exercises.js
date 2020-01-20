@@ -88,13 +88,13 @@ function increasing(numbers) {
   }
   let flag = false;
   for (let i = 0; i < numbers.length -2; i++){
-    let index = Number.isInteger(number[i]);
-    if ( index === false)){
+    let index = Number.isInteger(numbers[i]);
+    if (index === false){
       return false;
     }
     let first = numbers[i];
-    let second = numbers [i + 1];
-    let third = number [i + 2];
+    let second = numbers[i + 1];
+    let third = numbers[i + 2];
     let indexsecond = Number.isInteger(second);
     let indexthird = Number.isInteger(third);
 
