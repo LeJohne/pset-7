@@ -51,11 +51,11 @@ function difference(numbers) {
 }
 
 function max(number) {
-  if (!number || number.length % 2 === 0 || number.length < 3 || number.some(isNan)){
+  if (!number || number.length % 2 === 0 || number.length < 3 || number.some(isNaN)){
     return undefined;
   } else {
     let newA = [];
-    newA.push(number.length/2);
+    newA.push(number[0]);
 
     let mid = Math.floor(number.length/2);
     newA.push(number[mid]);
