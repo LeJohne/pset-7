@@ -39,7 +39,15 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+  if (!numbers || numbers.some(isNaN) || numbers.length < 1 ){
+    return undefined;
+  } else {
+    let maximum = Number(Math.max.apply(null, numbers));
+    let minimum = Number(Math.min.apply(null, numbers));
+    let difference = maximum - minimum
+
+    return difference;
+  }
 }
 
 function max(number) {
