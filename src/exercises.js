@@ -197,50 +197,80 @@ function consecutive(numbers) {
 
 function balance(numbers) {
   let flag;
-    let sum = 0;
-    let halfSum;
-    let balanceSum = 0;
+  let sum = 0;
+  let halfSum;
+  let balanceSum = 0;
 
-    if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+  if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+    flag = false;
+    return false;
+  } else {
+    for (let i = 0; i < numbers.length - 1; i++) {
+      if (Number.isInteger(numbers[i]) === false) {
         flag = false;
         return false;
-    } else {
-        for (let i = 0; i < numbers.length - 1; i++) {
-            if (Number.isInteger(numbers[i]) === false){
-                flag = false;
-                return false;
-            }
-        }
-
-        for (let x = 0; x < numbers.length; x++){
-            sum += numbers[x];
-        }
-
-        halfSum = sum / 2;
-
-        if(sum % 2 === 1) {
-            flag = false;
-            return false;
-        }
-
-        for (let z = 0; z < numbers.length - 1; z++) {
-            balanceSum += numbers[z];
-            if (balanceSum === halfSum) {
-                flag = true;
-                return true;
-            }
-        }
-
-        if (flag === true) {
-            return true;
-        } else {
-            return false;
-        }
+      }
     }
+
+    for (let x = 0; x < numbers.length; x++) {
+      sum += numbers[x];
+    }
+
+    halfSum = sum / 2;
+
+    if (sum % 2 === 1) {
+      flag = false;
+      return false;
+    }
+
+    for (let z = 0; z < numbers.length - 1; z++) {
+      balanceSum += numbers[z];
+      if (balanceSum === halfSum) {
+        flag = true;
+        return true;
+      }
+    }
+
+    if (flag === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 function clumps(values) {
-  // write your code here
+  let clumps = 0;
+  let flag;
+  let lastIndexOfClump;
+
+  if (!values) {
+    return -1;
+  } else {
+    let target;
+    let surroundingTarget;
+
+    for (let x = 0; x < values.length - 1; x++) {
+      let counter1 = x;
+      let counter2 = x + 1;
+      target = values[counter1];
+      surroundingTarget = values[counter2];
+
+      if (target === surroundingTarget) {
+        while (target === surroundingTarget) {
+          target = values[counter1++];
+          surroundingTarget = values[counter2++];
+        }
+
+        flag = true;
+        lastIndexOfClump = counter1 - 1;
+        x = lastIndexOfClump;
+        clumps++;
+      } else {
+      }
+    }
+    return clumps;
+  }
 }
 
 /*
