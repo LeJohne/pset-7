@@ -174,12 +174,69 @@ function everywhere(values, x) {
 }
 
 function consecutive(numbers) {
-  // write your code here
+  if (!numbers || numbers.length < 3) {
+    return false;
+  }
+  let isTru = false;
+  for (let i = 0; i < numbers.length - 2; i++) {
+    let a = numbers[i];
+    let b = numbers[i + 1];
+    let c = numbers[i + 2];
+    if (Number.isInteger(a) == false || Number.isInteger(b) == false || Number.isInteger(c) == false) {
+      return false;
+    }
+    if (a % 2 == 0 && b % 2 == 0 && c % 2 == 0) {
+      isTru = true;
+    } else if (a % 2 == 1 && b % 2 == 1 && c % 2 == 1) {
+      isTru = true;
+    }
+
+  }
+  return isTru;
 }
 
 function balance(numbers) {
-  // write your code here
-  console.log("test");
+  let flag;
+    let sum = 0;
+    let halfSum;
+    let balanceSum = 0;
+
+    if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+        flag = false;
+        return false;
+    } else {
+        for (let i = 0; i < numbers.length - 1; i++) {
+            if (Number.isInteger(numbers[i]) === false){
+                flag = false;
+                return false;
+            }
+        }
+
+        for (let x = 0; x < numbers.length; x++){
+            sum += numbers[x];
+        }
+
+        halfSum = sum / 2;
+
+        if(sum % 2 === 1) {
+            flag = false;
+            return false;
+        }
+
+        for (let z = 0; z < numbers.length - 1; z++) {
+            balanceSum += numbers[z];
+            if (balanceSum === halfSum) {
+                flag = true;
+                return true;
+            }
+        }
+
+        if (flag === true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 function clumps(values) {
